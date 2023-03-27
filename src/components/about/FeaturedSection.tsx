@@ -1,4 +1,6 @@
-import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid'
+import Image from 'next/image'
+import { BriefcaseIcon, LightBulbIcon, AcademicCapIcon } from '@heroicons/react/20/solid'
+import CommunityPhoto from '@/assets/about/community-photo.webp'
 
 export default function FeaturedSection() {
 	return (
@@ -42,11 +44,14 @@ export default function FeaturedSection() {
 					</div>
 				</div>
 				<div className="-mt-12 -ml-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
-					<img
+					<Image
+						className="w-[48rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]"
+						alt="Potret Komunitas Kami" src={CommunityPhoto} />
+					{/* <img
 						className="w-[48rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]"
 						src="https://wordpress.org/files/2022/10/community-photo-2-q50-unscaled.webp"
 						alt=""
-					/>
+					/> */}
 				</div>
 				<div className="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
 					<div className="lg:pr-4">
@@ -56,32 +61,26 @@ export default function FeaturedSection() {
 							</p>
 							<ul role="list" className="mt-8 space-y-8 text-gray-600">
 								<li className="flex gap-x-3">
-									<CloudArrowUpIcon className="mt-1 h-5 w-5 flex-none text-fuchsia-600" aria-hidden="true" />
+									<BriefcaseIcon className="mt-1 h-5 w-5 flex-none text-fuchsia-600" aria-hidden="true" />
 									<span>
-										<strong className="font-semibold text-gray-900">Push to deploy.</strong> Lorem ipsum, dolor sit amet
-										consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate
-										blanditiis ratione.
+										<strong className="font-semibold text-gray-900">Menentukan karir.</strong> Salah satu kunci dimana peserta mesti tahu karir apa yang ingin diambil.
 									</span>
 								</li>
 								<li className="flex gap-x-3">
-									<LockClosedIcon className="mt-1 h-5 w-5 flex-none text-fuchsia-600" aria-hidden="true" />
+									<LightBulbIcon className="mt-1 h-5 w-5 flex-none text-fuchsia-600" aria-hidden="true" />
 									<span>
-										<strong className="font-semibold text-gray-900">SSL certificates.</strong> Anim aute id magna aliqua
-										ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.
+										<strong className="font-semibold text-gray-900">Motivasi karir.</strong> Menyuluhkan betapa pentingnya karir, tapi sekaligus memberikan gambaran realita, karena mimpi tanpa realita itu hanya omong kosong.
 									</span>
 								</li>
 								<li className="flex gap-x-3">
-									<ServerIcon className="mt-1 h-5 w-5 flex-none text-fuchsia-600" aria-hidden="true" />
+									<AcademicCapIcon className="mt-1 h-5 w-5 flex-none text-fuchsia-600" aria-hidden="true" />
 									<span>
-										<strong className="font-semibold text-gray-900">Database backups.</strong> Ac tincidunt sapien
-										vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.
+										<strong className="font-semibold text-gray-900">Menentukan pilihan.</strong> Sebenarnya bukan hal yang sulit, yang penting kita tahu prioritas dan di mana realistis lebih tinggi ketimbang gengsi.
 									</span>
 								</li>
 							</ul>
 							<p className="mt-8">
-								Et vitae blandit facilisi magna lacus commodo. Vitae sapien duis odio id et. Id blandit molestie auctor
-								fermentum dignissim. Lacus diam tincidunt ac cursus in vel. Mauris varius vulputate et ultrices hac
-								adipiscing egestas. Iaculis convallis ac tempor et ut. Ac lorem vel integer orci.
+								Program ini diharapkan dapat memberikan pencerahan bagi kalian yang punya kendala atau masih plin-plan menentukan jalan perkuliahan. Bagi kalian yang sudah tahu ingin mengambil prodi apa namun tidak tahu mana perkuliahan yang harus dipilih juga jadi salah satu highlight dari program ini.
 							</p>
 							<h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">Tidak ingin melanjutkan kuliah? bukan masalah.</h2>
 							<p className="mt-6">
