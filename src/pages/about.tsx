@@ -5,6 +5,7 @@ import LeftBlob from '@/components/global/decorations/LeftBlob'
 import RightBlob from '@/components/global/decorations/RightBlob'
 import FeaturedSection from '@/components/about/FeaturedSection'
 import Teams from '@/components/about/Teams'
+import Newsletter from '@/components/global/card/Newsletter'
 
 const people = [
 	{
@@ -63,6 +64,7 @@ export default function About() {
 			</div>
 			<FeaturedSection />
 			<Teams people={people} />
+			<Newsletter />
 			<RightBlob />
 		</>
 	)
