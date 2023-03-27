@@ -1,6 +1,9 @@
 import Link from 'next/link'
 import LeftBlob from '@/components/global/decorations/LeftBlob'
 import RightBlob from '@/components/global/decorations/RightBlob'
+import QuotedCard from '@/components/home/QuotedCard'
+import Newsletter from '@/components/global/card/Newsletter'
+import HeroSection from '@/components/global/card/HeroSection'
 
 export default function Home() {
 	return (
@@ -36,6 +39,13 @@ export default function Home() {
 					</div>
 				</div>
 			</div>
+			<HeroSection />
+			<QuotedCard
+				fullName="Reyhan Fabiano"
+				title="Mahasiswa Fisika di UNUD">
+				Mimpi tanpa realistis adalah omong kosong, realita tanpa mimpi sama saja dengan bunuh diri.
+			</QuotedCard>
+			<Newsletter />
 			<RightBlob />
 		</>
 	)
