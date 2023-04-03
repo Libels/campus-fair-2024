@@ -104,7 +104,7 @@ export default function UniversityItem({ params }: { params: { slug: string } })
 						))}
 					</dl>
 
-					<p className="mt-16 text-gray-500">
+					<div className="mt-16 text-gray-500">
 						<h3 className="font-bold text-gray-900">Informasi Kontak</h3>
 						{university.contacts.map((contact) => (
 							<div key={contact.name} className="pt-2 text-sm grid grid-cols-2">
@@ -117,7 +117,7 @@ export default function UniversityItem({ params }: { params: { slug: string } })
 								</Link>
 							</div>
 						))}
-					</p>
+					</div>
 				</div>
 				<div className="grid grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8">
 					<img
