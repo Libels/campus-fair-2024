@@ -3,8 +3,8 @@ import Link from "next/link"
 
 const links = [
 	{ name: 'Volunteer program', href: '#' },
-	{ name: 'Sponsorship', href: '#' },
-	{ name: 'Fundraising', href: '#' },
+	{ name: 'Sponsorship', href: '/fundraise/sponsor' },
+	{ name: 'Fundraising', href: '/fundraise/donate' },
 	{ name: 'Meet our leadership', href: '/about' },
 ]
 
