@@ -3,41 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import LeftBlob from '@/components/global/decorations/LeftBlob'
 import RightBlob from '@/components/global/decorations/RightBlob'
-import Teams from '@/components/about/Teams'
 import Newsletter from '@/components/global/card/Newsletter'
-
-const people = [
-	{
-		name: 'Ahmad Azhari',
-		role: 'President',
-		imageUrl:
-			'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-	},
-	{
-		name: 'Fray Dalton',
-		role: 'Vice President',
-		imageUrl:
-			'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-	},
-	{
-		name: 'Desi Kristianti',
-		role: 'Babu #1',
-		imageUrl:
-			'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-	},
-	{
-		name: 'Mutliqa Maimun',
-		role: 'Babu #2',
-		imageUrl:
-			'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-	},
-	{
-		name: 'Hanna Balqis',
-		role: 'Babu #3',
-		imageUrl:
-			'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-	},
-]
 
 export default function Privacy() {
 	return (
@@ -170,21 +136,59 @@ export default function Privacy() {
 								<p className="mt-6">
 									Kami menggunakan cookie atau teknologi tracking serupa (seperti web beacons dan pixels) untuk menyimpan dan membaca informasi. Anda dapat menolak untuk menggunakan cookies, namun beberapa aspek layanan mungkin tidak dapat dijangkau.
 								</p>
-								<h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">5. APA KAMI MENGGUNAKAN COOKIES ATAU TEKNOLOGI SERUPA?</h2>
-								<p className="mt-6">
-									Kami menggunakan cookie atau teknologi tracking serupa (seperti web beacons dan pixels) untuk menyimpan dan membaca informasi. Anda dapat menolak untuk menggunakan cookies, namun beberapa aspek layanan mungkin tidak dapat dijangkau.
-								</p>
-								<h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">6. BAGAIMANA KAMI MEMPROSES LOGIN SOCIAL MEDIA ANDA?</h2>
+								<h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">5. BAGAIMANA KAMI MEMPROSES LOGIN SOCIAL MEDIA ANDA?</h2>
 								<p className="mt-6">
 									Layanan kami menawarkan fitur untuk registrasi &amp; login menggunakan social media pihak ketiga, ketika anda memilih ini maka kami akan memperoleh beberapa informasi dari penyedia social media anda. Informasi yang diperoleh dapat beragam namun kami lebih fokus terhadap nama, alamat email, gambar profil, serta beberapa informasi yang anda atur sebagai publik.
 								</p>
-								<h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">7. BERAPA LAMA KAMI AKAN MENYIMPAN DATA ANDA?</h2>
+								<h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">6. BERAPA LAMA KAMI AKAN MENYIMPAN DATA ANDA?</h2>
 								<p className="mt-6">
 									Kami akan menyimpan data anda selama tidak ada permintaan untuk menghapus akun anda, ketika kami sudah tidak melanjutkan Layanan ini, maka kami akan mencoba untuk menghapus data anda serta permintaan untuk penghapusan data terkait ke pihak ketiga.
 								</p>
-								<h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">8. SEBERAPA AMAN DATA ANDA DISIMPAN?</h2>
+								<h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">7. SEBERAPA AMAN DATA ANDA DISIMPAN?</h2>
 								<p className="mt-6">
 									Kami sudah menerapkan pengamanan untuk melindungi data anda, namun bagaimanapun kami mencoba untuk melindungi data anda juga kami tidak dapat menjamin 100% apapun yang melalui internet dapat aman, jadi kami tidak dapat menjamin dari hacker, cybercriminal, atau akses pihak ketiga tanpa otoritas tidak dapat menyerang sistem kemanaan kami dan mengambil data, mengakses, mencuri, atau mengubah informasi anda. Meskipun kami sudah berusaha yang terbaik, resiko ditanggung anda sendiri. Anda harus mengakses Layanan ini melalui device dan jaringan yang aman.
+								</p>
+								<h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">8. APA HAK PRIVASI ANDA?</h2>
+								<p className="mt-6">
+									Jika anda berada di wilayah Eropa ataupun UK dan yakin jika kami melanggar kewenangan dalam memproses informasi pribadi anda, anda memiliki hak untuk melapor kepada <Link href="https://ec.europa.eu/justice/data-protection/bodies/authorities/index_en.htm">Otoritas pengamanan data anggota setempat</Link> atau <Link href="https://ico.org.uk/make-a-complaint/data-protection-complaints/data-protection-complaints/">Otoritas pengamanan data UK</Link>.
+								</p>
+								<p className="mt-6">
+									Jika anda berada di Switzerland, anda mungkin dapat menghubungi <Link href="https://www.edoeb.admin.ch/edoeb/en/home.html">Federasi pengamanan data dan komisi informasi</Link>
+								</p>
+								<p className="mt-6">
+									<strong className="font-semibold text-gray-900">Membatalkan Izin:</strong> Kami bergantung terhadap izin anda untuk memproses data pribadi, yang mungkin diterapkan tergantung dengan hukum yang berlaku, anda dapat menarik izin anda kapan saja dengan menghubungi kami.
+								</p>
+								<p className="mt-6">
+									Namun ini tidak mempengaruhi kami untuk memproses data yang diberikan sebelum anda mencabut izin bergantung terhadap hukum yang berlaku.
+								</p>
+								<p className="mt-6">
+									<strong className="font-semibold text-gray-900">Tidak menerima promosi:</strong> Anda dapat berhenti berlangganan kapan saja dengan mengklik link unsubscribe di email yang kami kirimkan. Anda akan dikeluarkan dari marketing list. Namun kami tetap gunakan email anda untuk berkomunikasi terkait akun dan Layanan ini yang penting untuk kebutuhan administrasi dan juga untuk merespon kebutuhan lain non-marketing.
+								</p>
+								<h3 className="mt-16 text-xl font-bold tracking-tight text-gray-900">Informasi Akun</h3>
+								<p className="mt-6">
+									Anda dapat kapan saja review ulang atau mengubah informasi pada akun anda atau menutup akun anda dengan login dan pergi ke setting akun lalu update akun anda.
+								</p>
+								<p className="mt-6">
+									Dalam request saat menutup akun, kami akan menonaktifkan akun anda dari database, namun kami akan tetap menyimpan sebagian data untuk menghindari penipuan, troubleshooting, membantu investigasi, menerapkan kebutuhan legal kami sesuai hukum yang berlaku.
+								</p>
+								<p className="mt-6">
+									<strong className="font-semibold text-gray-900">Cookies & teknologi serupa:</strong> Kebanyakan browser menerima & memproses cookies secara default. Namun anda dapat menolak itu jika tidak menginginkan untuk penggunaan cookie, namun ini dapat mempengaruhi sebagian aspek fitur atau layanan dalam Layanan kami. Kami hanya menggunakan cookies untuk keperluan Layanan kami, cookies untuk keperluan marketing dikelola oleh layanan pihak ketiga.
+								</p>
+								<h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">9. DUKUNGAN UNTUK FITUR DO-NOT-TRACK</h2>
+								<p className="mt-6">
+									Kebanyakan browser sudah memberikan fitur Do-Not-Track (&quot;DNT&quot;) atau anda dapat menyalakan sinyal untuk preferensi privasi untuk menolak tracking terhadap interaksi dan aktivitas browsing. Saat ini teknologi tersebut belum memiliki standar untuk mengenali dan menrapkan sinyal DNT. Oleh karena itu kami belum dapat memenuhi permintaan DNT atau fitur serupa untuk prefernsi tidak dilacak secara otomatis. Jika sudah ada standar yang dapat kami implementasi maka kami akan segera menerapkan fitur tersebut, kami juga akan memberitahukan kepada anda tentang praktis yang kami lakukan dalam revisi pemberitahuan ini.
+								</p>
+								<h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">10. APAKAH KAMI MERUBAH PEMBERITAHUAN INI?</h2>
+								<p className="mt-6">
+									Kami mungkin akan merubah pemberitahuan seiring berjalannya waktu. Versi terbaru diindikasi dengan tanggal perubahan &quot;Revisi&quot; dan juga efektif pada tanggal itu pula. Jika kami melalukan perubahan, kami mungkin memberitahukan anda secara langsung melalui email. Kami menghimbau untuk selalu memperhatikan pemberitahuan ini secara berkala untuk memahami bagaimana kami melindungi informasi anda.
+								</p>
+								<h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">11. KEMANA ANDA DAPAT MENGHUBUNGI KAMI TERKAIT PEMBERITAHUAN INI?</h2>
+								<p className="mt-6">
+									Jika anda memiliki beberapa pertanyaan terkait pemberitahuan ini, anda dapat menghubungi kami melalui Instagram kami <Link href="https://www.instagram.com/lcf_jkt/">@lcf_jkt</Link>.
+								</p>
+								<h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">12. BAGAIMANA ANDA MENINJAU, UPDATE, ATAU MENGHAPUS DATA YANG KAMI DAPATKAN DARI ANDA?</h2>
+								<p className="mt-6">
+									Tergantung dari hukum yang berlaku di negara anda, anda memiliki hak untuk mengakses informasi pribadi yang kami dapatkan dari anda, merubah informasi tersebut, atau menghapusnya. Untuk itu anda dapat menghubungi kami melalui Instagram kami <Link href="https://www.instagram.com/lcf_jkt/">@lcf_jkt</Link>.
 								</p>
 							</div>
 						</div>
