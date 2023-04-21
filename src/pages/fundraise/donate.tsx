@@ -237,7 +237,7 @@ export default function FundraiseDonation() {
 							<Switch.Label className="text-sm leading-6 text-gray-600">
 								Jangan tampilkan data saya &
 								dengan melanjutkan, artinya anda setuju terhadap{' '}
-								<Link href="#" className="font-semibold text-fuchsia-600">
+								<Link href="/privacy" className="font-semibold text-fuchsia-600">
 									privacy&nbsp;policy
 								</Link>
 								.
