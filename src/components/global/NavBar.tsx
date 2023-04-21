@@ -55,7 +55,7 @@ export default function NavBar() {
 						))}
 					</div>
 					<div className="hidden lg:flex lg:flex-1 lg:justify-end">
-						<Link href="#" className="text-sm font-semibold leading-6 text-gray-900">
+						<Link href="/fundraise" className="text-sm font-semibold leading-6 text-gray-900">
 							Program Fundraise <span aria-hidden="true">&rarr;</span>
 						</Link>
 					</div>
@@ -99,7 +99,7 @@ export default function NavBar() {
 								</div>
 								<div className="py-6">
 									<Link
-										href="#"
+										href="/fundraise"
 										className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
 									>
 										Program Fundraise
