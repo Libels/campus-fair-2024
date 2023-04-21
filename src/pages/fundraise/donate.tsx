@@ -235,14 +235,15 @@ export default function FundraiseDonation() {
 								</Switch>
 							</div>
 							<Switch.Label className="text-sm leading-6 text-gray-600">
-								Jangan tampilkan data saya &
-								dengan melanjutkan, artinya anda setuju terhadap{' '}
-								<Link href="/privacy" className="font-semibold text-fuchsia-600">
-									privacy&nbsp;policy
-								</Link>
-								.
+								Jadikan donasi saya sebagai anonim.
 							</Switch.Label>
 						</Switch.Group>
+						<span className="text-sm leading-6 text-gray-600  sm:col-span-2">
+							Dengan melanjutkan ke pembayaran, artinya anda setuju terhadap{' '}
+							<Link href="/privacy" className="font-semibold text-fuchsia-600">
+								privacy&nbsp;policy
+							</Link>.
+						</span>
 					</div>
 					<div className="mt-10">
 						<button
