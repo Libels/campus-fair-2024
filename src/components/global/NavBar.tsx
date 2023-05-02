@@ -8,7 +8,7 @@ const navigation = [
 	{ name: 'Home', href: '/' },
 	{ name: 'About', href: '/about' },
 	{ name: 'University', href: '/university' },
-	{ name: 'Contact', href: '#' },
+	{ name: 'Contact', href: '/contact' },
 ]
 
 function classNames(...classes: string[]) {
