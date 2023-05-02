@@ -5,7 +5,7 @@ import LeftBlob from '@/components/global/decorations/LeftBlob'
 import RightBlob from '@/components/global/decorations/RightBlob'
 import Newsletter from '@/components/global/card/Newsletter'
 
-import { useState } from 'react'
+import { FormEvent, useState } from 'react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { Switch } from '@headlessui/react'
 
@@ -15,6 +15,47 @@ function classNames(...classes: string[]) {
 
 export default function Contact() {
 	const [agreed, setAgreed] = useState(false)
+
+	const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+		event.preventDefault()
+
+		const target = event.target as typeof event.target & {
+			fullName: { value: string },
+			organizationTitle: { value: string },
+			company: { value: string },
+			email: { value: string },
+			phoneNumber: { value: string },
+			message: { value: string },
+		}
+
+		// Get data from the form.
+		const data = {
+			fullName: target.fullName.value,
+			organizationTitle: target.organizationTitle.value,
+			company: target.company.value,
+			email: target.email.value,
+			phoneNumber: target.phoneNumber.value,
+			message: target.message.value,
+		}
+
+		// API endpoint where we send form data.
+		const endpoint = '/api/contact'
+		const options = {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(data),
+		}
+
+		// Send the form data to our forms API on Vercel and get a response.
+		const response = await fetch(endpoint, options)
+
+		// Get the response data from server as JSON.
+		// If server returns the name submitted, that means the form works.
+		const result = await response.json()
+		alert(`Is this your full name: ${result.message}`)
+	}
 
 	return (
 		<>
@@ -42,31 +83,31 @@ export default function Contact() {
 						Punya pertanyaan atau ada yang ingin disampaikan?
 					</p>
 				</div>
-				<form action="#" method="POST" className="mx-auto mt-16 max-w-xl sm:mt-20">
+				<form onSubmit={handleSubmit} className="mx-auto mt-16 max-w-xl sm:mt-20">
 					<div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
 						<div>
-							<label htmlFor="full-name" className="block text-sm font-semibold leading-6 text-gray-900">
+							<label htmlFor="fullName" className="block text-sm font-semibold leading-6 text-gray-900">
 								Nama
 							</label>
 							<div className="mt-2.5">
 								<input
 									type="text"
-									name="full-name"
-									id="full-name"
+									name="fullName"
+									id="fullName"
 									autoComplete="name"
 									className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-fuchsia-600 sm:text-sm sm:leading-6"
 								/>
 							</div>
 						</div>
 						<div>
-							<label htmlFor="organization-title" className="block text-sm font-semibold leading-6 text-gray-900">
+							<label htmlFor="organizationTitle" className="block text-sm font-semibold leading-6 text-gray-900">
 								Posisi
 							</label>
 							<div className="mt-2.5">
 								<input
 									type="text"
-									name="organization-title"
-									id="organization-title"
+									name="organizationTitle"
+									id="organizationTitle"
 									autoComplete="organization-title"
 									className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-fuchsia-600 sm:text-sm sm:leading-6"
 								/>
@@ -101,14 +142,14 @@ export default function Contact() {
 							</div>
 						</div>
 						<div className="sm:col-span-2">
-							<label htmlFor="phone-number" className="block text-sm font-semibold leading-6 text-gray-900">
+							<label htmlFor="phoneNumber" className="block text-sm font-semibold leading-6 text-gray-900">
 								Nomor Telpon (dapat dihubungi melalui WhatsApp)
 							</label>
 							<div className="relative mt-2.5">
 								<input
 									type="tel"
-									name="phone-number"
-									id="phone-number"
+									name="phoneNumber"
+									id="phoneNumber"
 									autoComplete="tel"
 									className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-fuchsia-600 sm:text-sm sm:leading-6"
 								/>
