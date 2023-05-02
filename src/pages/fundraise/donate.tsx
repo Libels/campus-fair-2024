@@ -241,7 +241,7 @@ export default function FundraiseDonation() {
 						<span className="text-sm leading-6 text-gray-600  sm:col-span-2">
 							Dengan melanjutkan ke pembayaran, artinya anda setuju terhadap{' '}
 							<Link href="/privacy" className="font-semibold text-fuchsia-600">
-								privacy&nbsp;policy
+								<a target="_blank">privacy&nbsp;policy</a>
 							</Link>.
 						</span>
 					</div>
