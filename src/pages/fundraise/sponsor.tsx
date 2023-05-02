@@ -129,7 +129,7 @@ export default function FundraiseSponsor() {
 							</div>
 						</div>
 						<span className="text-sm leading-6 text-gray-600  sm:col-span-2">
-							Dengan melanjutkan ke pembayaran, artinya anda setuju terhadap{' '}
+							Dengan mengirimkan pesan, artinya anda setuju terhadap{' '}
 							<Link href="/privacy" className="font-semibold text-fuchsia-600">
 								privacy&nbsp;policy
 							</Link>.
