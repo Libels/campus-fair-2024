@@ -73,7 +73,7 @@ export default function Privacy() {
 									<li>NPWP</li>
 								</ul>
 								<p className="mt-6">
-									<strong className="font-semibold text-gray-900">Data pembayaran.</strong> Kami mungkin mengambil data yang diperlukan untuk memproses pembayaran jika anda melakukan transaksi ataupun donasi, seperti nomor instrumen pembayaran beserta kode keamanan terkait. Semua data pembayaran disimpan oleh Xendit. Anda mungkin ingin mempelajari Privacy Policy mereka di link berikut: <Link className="text-underline text-fuchsia-500" href="https://www.xendit.co/id/privacy-policy/"><a target="_blank">https://www.xendit.co/id/privacy-policy/</a></Link>.
+									<strong className="font-semibold text-gray-900">Data pembayaran.</strong> Kami mungkin mengambil data yang diperlukan untuk memproses pembayaran jika anda melakukan transaksi ataupun donasi, seperti nomor instrumen pembayaran beserta kode keamanan terkait. Semua data pembayaran disimpan oleh Xendit. Anda mungkin ingin mempelajari Privacy Policy mereka di link berikut: <Link legacyBehavior className="text-underline text-fuchsia-500" href="https://www.xendit.co/id/privacy-policy/"><a target="_blank">https://www.xendit.co/id/privacy-policy/</a></Link>.
 								</p>
 								<p className="mt-6">
 									<strong className="font-semibold text-gray-900">Data Login Social Media.</strong> Kami mungkin memberikan opsi kemudahan di Platform ini untuk registrasi atau mentautkan menggunakan akun social media yang sudah ada, seperti akun Twitter, Google, GitHub, LinkedIn. Jika anda memilih untuk registrasi dengan cara ini, kami sudah menjelaskannya di bagian terkait.

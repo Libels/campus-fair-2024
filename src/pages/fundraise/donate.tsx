@@ -240,7 +240,7 @@ export default function FundraiseDonation() {
 						</Switch.Group>
 						<span className="text-sm leading-6 text-gray-600  sm:col-span-2">
 							Dengan melanjutkan ke pembayaran, artinya anda setuju terhadap{' '}
-							<Link href="/privacy" className="font-semibold text-fuchsia-600">
+							<Link legacyBehavior href="/privacy" className="font-semibold text-fuchsia-600">
 								<a target="_blank">privacy&nbsp;policy</a>
 							</Link>.
 						</span>
