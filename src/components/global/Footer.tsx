@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 const navigation = [
-	{ name: 'Sponsors', href: '/' },
+	{ name: 'Sponsors', href: '/fundraise' },
 	{ name: 'About', href: '/about' },
 ]
 
