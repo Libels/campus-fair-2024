@@ -8,6 +8,7 @@ import Newsletter from '@/components/global/card/Newsletter'
 import { FormEvent, useState } from 'react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { Switch } from '@headlessui/react'
+import { SuccessModal, WarningModal } from '@/components/global/Modal'
 
 function classNames(...classes: string[]) {
 	return classes.filter(Boolean).join(' ')
@@ -15,30 +16,31 @@ function classNames(...classes: string[]) {
 
 export default function Contact() {
 	const [agreed, setAgreed] = useState(false)
+	const [isErrorOpen, setIsErrorOpen] = useState(false)
+	const [isDialogOpen, setIsDialogOpen] = useState(false)
 
 	const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
 		event.preventDefault()
 
+		// Initiate form input selector
 		const target = event.target as typeof event.target & {
 			fullName: { value: string },
-			organizationTitle: { value: string },
 			company: { value: string },
 			email: { value: string },
 			phoneNumber: { value: string },
 			message: { value: string },
 		}
 
-		// Get data from the form.
+		// Get data from the form selector
 		const data = {
 			fullName: target.fullName.value,
-			organizationTitle: target.organizationTitle.value,
 			company: target.company.value,
 			email: target.email.value,
 			phoneNumber: target.phoneNumber.value,
 			message: target.message.value,
 		}
 
-		// API endpoint where we send form data.
+		// API endpoint
 		const endpoint = '/api/contact'
 		const options = {
 			method: 'POST',
@@ -52,9 +54,13 @@ export default function Contact() {
 		const response = await fetch(endpoint, options)
 
 		// Get the response data from server as JSON.
-		// If server returns the name submitted, that means the form works.
-		const result = await response.json()
-		alert(`Is this your full name: ${result.message}`)
+		const status = await response.status
+
+		if (status === 200) {
+			return setIsDialogOpen(true)
+		} else {
+			return setIsErrorOpen(true)
+		}
 	}
 
 	return (
@@ -64,6 +70,15 @@ export default function Contact() {
 				<meta name="description" content="Reach your dream career through education." />
 			</Head>
 			<LeftBlob />
+
+			<SuccessModal show={isDialogOpen} triggerModal={setIsDialogOpen} title="Berhasil mengirimkan">
+				Pesan anda telah dikirimkan, tunggu balasan dari kami, kami mungkin perlu waktu sedikit lebih lama karena keterbatasan tim.
+			</SuccessModal>
+
+			<WarningModal show={isErrorOpen} triggerModal={setIsDialogOpen} title="Sepertinya ada yang salah">
+				Terjadi kendala yang tidak dapat dihindari, cobalah beberapa saat lagi.
+			</WarningModal>
+
 			<div className="isolate px-6 py-24 sm:py-32 lg:px-8">
 				<div
 					className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
@@ -85,12 +100,13 @@ export default function Contact() {
 				</div>
 				<form onSubmit={handleSubmit} className="mx-auto mt-16 max-w-xl sm:mt-20">
 					<div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-						<div>
+						<div className="sm:col-span-2">
 							<label htmlFor="fullName" className="block text-sm font-semibold leading-6 text-gray-900">
-								Nama
+								Nama <span className="text-red-500 text-sm">*</span>
 							</label>
 							<div className="mt-2.5">
 								<input
+									required
 									type="text"
 									name="fullName"
 									id="fullName"
@@ -99,23 +115,9 @@ export default function Contact() {
 								/>
 							</div>
 						</div>
-						<div>
-							<label htmlFor="organizationTitle" className="block text-sm font-semibold leading-6 text-gray-900">
-								Posisi
-							</label>
-							<div className="mt-2.5">
-								<input
-									type="text"
-									name="organizationTitle"
-									id="organizationTitle"
-									autoComplete="organization-title"
-									className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-fuchsia-600 sm:text-sm sm:leading-6"
-								/>
-							</div>
-						</div>
 						<div className="sm:col-span-2">
 							<label htmlFor="company" className="block text-sm font-semibold leading-6 text-gray-900">
-								Perusahaan / Lembaga / Nama Usaha
+								Asal Institusi
 							</label>
 							<div className="mt-2.5">
 								<input
@@ -129,10 +131,11 @@ export default function Contact() {
 						</div>
 						<div className="sm:col-span-2">
 							<label htmlFor="email" className="block text-sm font-semibold leading-6 text-gray-900">
-								Email
+								Email <span className="text-red-500 text-sm">*</span>
 							</label>
 							<div className="mt-2.5">
 								<input
+									required
 									type="email"
 									name="email"
 									id="email"
@@ -143,10 +146,11 @@ export default function Contact() {
 						</div>
 						<div className="sm:col-span-2">
 							<label htmlFor="phoneNumber" className="block text-sm font-semibold leading-6 text-gray-900">
-								Nomor Telpon (dapat dihubungi melalui WhatsApp)
+								Nomor Telpon (dapat dihubungi melalui WhatsApp) <span className="text-red-500 text-sm">*</span>
 							</label>
 							<div className="relative mt-2.5">
 								<input
+									required
 									type="tel"
 									name="phoneNumber"
 									id="phoneNumber"
@@ -157,10 +161,11 @@ export default function Contact() {
 						</div>
 						<div className="sm:col-span-2">
 							<label htmlFor="message" className="block text-sm font-semibold leading-6 text-gray-900">
-								Pesan
+								Pesan <span className="text-red-500 text-sm">*</span>
 							</label>
 							<div className="mt-2.5">
 								<textarea
+									required
 									name="message"
 									id="message"
 									rows={4}
@@ -170,7 +175,7 @@ export default function Contact() {
 							</div>
 						</div>
 						<span className="text-sm leading-6 text-gray-600  sm:col-span-2">
-							Dengan mengirimkan, artinya anda setuju terhadap{' '}
+							Dengan mengirimkan pesan, artinya anda setuju terhadap{' '}
 							<Link legacyBehavior href="/privacy" className="font-semibold text-fuchsia-600">
 								<a target="_blank">privacy&nbsp;policy</a>
 							</Link>.
