@@ -1,15 +1,22 @@
 import { CalendarDaysIcon, HandRaisedIcon } from '@heroicons/react/24/outline'
 import { useState } from 'react'
 
+import { SuccessModal, WarningModal } from '@/components/global/Modal'
+
 export default function Newsletter() {
 	const [emailAddress, setEmailAddress] = useState('')
 
 	const addressUpdate = async (event: React.ChangeEvent<HTMLInputElement>) => setEmailAddress(event.currentTarget.value)
 
-	const handleSubmit = async (event: React.FormEvent<EventTarget>) => {
+	const [isErrorOpen, setIsErrorOpen] = useState(false)
+	const [isDialogOpen, setIsDialogOpen] = useState(false)
+
+	const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault()
 
-		const response = await fetch('/api/hello', {
+		// API endpoint
+		const endpoint = '/api/subscribe'
+		const options = {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -17,14 +24,31 @@ export default function Newsletter() {
 			body: JSON.stringify({
 				email: emailAddress
 			}),
-		})
+		}
 
-		const result = await response.json()
-		alert(`Is this your full name: ${JSON.stringify(result)}`)
+		// Send the form data to our forms API on Vercel and get a response.
+		const response = await fetch(endpoint, options)
+
+		// Get the response data from server as JSON.
+		const status = await response.status
+
+		if (status === 200) {
+			return setIsDialogOpen(true)
+		} else {
+			return setIsErrorOpen(true)
+		}
 	}
 
 	return (
 		<div className="relative isolate overflow-hidden bg-gray-900 py-16 sm:py-24 lg:py-32">
+			<SuccessModal show={isDialogOpen} triggerModal={setIsDialogOpen} title="Berhasil subscribe">
+				Email anda telah terdaftar pada sistem, kami akan mengirimkan informasi terbaru kepada anda.
+			</SuccessModal>
+
+			<WarningModal show={isErrorOpen} triggerModal={setIsDialogOpen} title="Sepertinya ada yang salah">
+				Terjadi kendala yang tidak dapat dihindari, cobalah beberapa saat lagi.
+			</WarningModal>
+
 			<div className="mx-auto max-w-7xl px-6 lg:px-8">
 				<div className="mx-auto grid max-w-2xl grid-cols-1 gap-y-16 gap-x-8 lg:max-w-none lg:grid-cols-2">
 					<div className="max-w-xl lg:max-w-lg">
