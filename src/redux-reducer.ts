@@ -1,15 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit"
 
-// export interface ReduxTypes {
-// 	userSession: {
-// 		id: number,
-// 		username: string,
-// 		fullName: string,
-// 		avatar: string,
-// 		isVerified: boolean,
-// 		newsletter: boolean,
-// 	},
-// }
+export interface ReduxTypes {
+	userSession: {
+		id: number,
+		username: string,
+		fullName: string,
+		avatar: string,
+		isVerified: boolean,
+		newsletter: boolean,
+	},
+}
 
 const reduxReducer = createSlice({
 	name: 'app',
