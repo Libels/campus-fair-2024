@@ -9,6 +9,9 @@ export interface ReduxTypes {
 		isVerified: boolean,
 		newsletter: boolean,
 	},
+	auth: {
+		jwt: string
+	}
 }
 
 const reduxReducer = createSlice({
@@ -22,6 +25,9 @@ const reduxReducer = createSlice({
 			isVerified: false,
 			newsletter: false,
 		},
+		auth: {
+			jwt: ''
+		}
 	},
 	reducers: {
 		newsletterSubscribed(state) {

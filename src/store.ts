@@ -7,7 +7,7 @@ import reduxReducer from "@/redux-reducer"
 const persistConfig = {
 	key: 'primary',
 	storage: storageSession,
-	version: 1
+	version: 2
 }
 
 const persistedReducer = persistReducer(persistConfig, reduxReducer)
