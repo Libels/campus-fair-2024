@@ -36,11 +36,11 @@ const universities = [{
 },
 ]
 
-export default function DashboardLanding() {
+export default function ProfileLanding() {
 	return (
 		<>
 			<Head>
-				<title>Libels Campus Fair Dashboard</title>
+				<title>LCF Member Area</title>
 				<meta name="description" content="Manage your profile." />
 			</Head>
 			{/* <LeftBlob /> */}
