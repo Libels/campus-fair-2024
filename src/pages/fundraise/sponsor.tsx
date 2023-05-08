@@ -100,7 +100,7 @@ export default function FundraiseSponsor() {
 						Temukan pasar baru untuk produk anda.
 					</p>
 				</div>
-				<form action="#" method="POST" className="mx-auto mt-16 max-w-xl sm:mt-20">
+				<form onSubmit={handleSubmit} className="mx-auto mt-16 max-w-xl sm:mt-20">
 					<div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
 						<div>
 							<label htmlFor="fullName" className="block text-sm font-semibold leading-6 text-gray-900">
