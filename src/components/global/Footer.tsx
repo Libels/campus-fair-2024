@@ -3,6 +3,7 @@ import Link from 'next/link'
 const navigation = [
 	{ name: 'Sponsors', href: '/fundraise' },
 	{ name: 'About', href: '/about' },
+	{ name: 'Privacy', href: '/privacy' },
 ]
 
 export default function Footer() {
