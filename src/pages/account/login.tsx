@@ -4,8 +4,14 @@ import Head from 'next/head'
 import LeftBlob from '@/components/global/decorations/LeftBlob'
 import RightBlob from '@/components/global/decorations/RightBlob'
 import Link from 'next/link'
+import { ReduxTypes } from '@/redux-reducer'
+import { useDispatch, useSelector } from 'react-redux'
 
 export default function Login() {
+
+	const subscribed: boolean = useSelector((state: ReduxTypes) => state.userSession.newsletter)
+	const dispatch = useDispatch()
+
 	return (
 		<>
 			<Head>
