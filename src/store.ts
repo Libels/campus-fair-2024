@@ -1,13 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { persistStore, persistReducer } from 'redux-persist'
-import storage from 'redux-persist/lib/storage'
+import storageSession from 'redux-persist/lib/storage/session'
 
 import reduxReducer from "@/redux-reducer"
-import { useMemo } from 'react'
 
 const persistConfig = {
 	key: 'primary',
-	storage
+	storage: storageSession
 }
 
 const persistedReducer = persistReducer(persistConfig, reduxReducer)
