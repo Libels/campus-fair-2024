@@ -1,15 +1,19 @@
 import NextAuth, { NextAuthOptions } from "next-auth"
+
+import { LaravelAdapter } from "@/lib/LaravelAdapter"
+
 import CredentialsProvider from "next-auth/providers/credentials"
 import GoogleProvider from "next-auth/providers/google"
 import GithubProvider from "next-auth/providers/github"
 import DiscordProvider from "next-auth/providers/discord"
-import TwitterProvider from "next-auth/providers/twitter"
+// import TwitterProvider from "next-auth/providers/twitter"
 // import AppleProvider from "next-auth/providers/apple"
 
 // For more information on each option (and a full list of options) go to
 // https://next-auth.js.org/configuration/options
 export const authOptions: NextAuthOptions = {
 	// https://next-auth.js.org/configuration/providers/oauth
+	adapter: LaravelAdapter(),
 	providers: [
 		/* 
 		// Temporarily removing the Apple provider from the demo site as the
@@ -82,7 +86,7 @@ export const authOptions: NextAuthOptions = {
 	},
 	callbacks: {
 		async jwt({ token }) {
-			token.userRole = "admin"
+			// token.userRole = "admin"
 			return token
 		},
 	},
