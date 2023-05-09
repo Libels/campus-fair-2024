@@ -4,6 +4,7 @@ import Link from 'next/link'
 import LeftBlob from '@/components/global/decorations/LeftBlob'
 import RightBlob from '@/components/global/decorations/RightBlob'
 import Newsletter from '@/components/global/card/Newsletter'
+import Sponsors from '@/components/fundraise/Sponsors'
 
 export default function Fundraise() {
 	return (
@@ -13,7 +14,7 @@ export default function Fundraise() {
 				<meta name="description" content="Reach your dream career through education." />
 			</Head>
 			<LeftBlob />
-			<div className="mx-auto max-w-2xl py-32 lg:py-40">
+			<div className="mx-auto max-w-2xl pt-32 lg:pt-40">
 				<div className="hidden sm:mb-8 sm:flex sm:justify-center">
 					<div className="relative rounded-full py-1 px-3 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
 						Mencari peluang kerja sama?{' '}
@@ -43,6 +44,7 @@ export default function Fundraise() {
 					</div>
 				</div>
 			</div>
+			<Sponsors />
 			<Newsletter />
 			<RightBlob />
 		</>
