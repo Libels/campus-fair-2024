@@ -7,6 +7,8 @@ import Link from 'next/link'
 import { ReduxTypes } from '@/redux-reducer'
 import { useDispatch, useSelector } from 'react-redux'
 
+import { signIn } from "next-auth/react"
+
 export default function Login() {
 
 	const subscribed: boolean = useSelector((state: ReduxTypes) => state.userSession.newsletter)
@@ -50,7 +52,7 @@ export default function Login() {
 									Password
 								</label>
 								<div className="text-sm">
-									<Link href="/forgot-password" className="font-semibold text-fuchsia-600 hover:text-fuchsia-500">
+									<Link href="/account/forgot-password" className="font-semibold text-fuchsia-600 hover:text-fuchsia-500">
 										Forgot password?
 									</Link>
 								</div>
@@ -70,12 +72,28 @@ export default function Login() {
 						<div>
 							<button
 								type="submit"
-								className="flex w-full justify-center rounded-md bg-fuchsia-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-fuchsia-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fuchsia-600"
+								className="primary-button w-full text-white bg-fuchsia-600 hover:bg-fuchsia-500 focus-visible:outline-fuchsia-600"
 							>
 								Sign in
 							</button>
 						</div>
 					</form>
+
+					<div>
+						<div className="relative mt-8 mb-4">
+							<div className="absolute flex items-center inset-0">
+								<div className="border-gray-300 border-t w-full"></div>
+							</div>
+							<div className="relative flex justify-center font-light text-sm text-gray-300">
+								<div className="bg-white px-2">or</div>
+							</div>
+						</div>
+						<div className="flex space-x-4">
+							<button className="w-1/3 primary-button border border-gray-600 text-gray-600 focus-visible:outline-gray-600" onClick={() => signIn("google")}>Google</button>
+							<button className="w-1/3 primary-button bg-[#24292f] text-white focus-visible:outline-[#24292f]" onClick={() => signIn("github")}>GitHub</button>
+							<button className="w-1/3 primary-button bg-[#7289da] text-white focus-visible:outline-[#7289da]" onClick={() => signIn("discord")}>Discord</button>
+						</div>
+					</div>
 
 					<p className="mt-10 text-center text-sm text-gray-500">
 						Belum menjadi anggota?{' '}
