@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.primary-button {
+	@apply flex justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 shadow-sm
+}
+
+.primary-button:focus-visible {
+	@apply outline outline-2 outline-offset-2
+}
