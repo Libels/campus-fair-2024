@@ -1,5 +1,3 @@
-import Image from 'next/image'
-import LogoUGM from '@/assets/university/logo/ugm.svg'
 import Head from 'next/head'
 import LeftBlob from '@/components/global/decorations/LeftBlob'
 import RightBlob from '@/components/global/decorations/RightBlob'
@@ -13,6 +11,22 @@ export default function Login() {
 
 	const subscribed: boolean = useSelector((state: ReduxTypes) => state.userSession.newsletter)
 	const dispatch = useDispatch()
+
+	const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
+		event.preventDefault()
+
+		// Initiate form input selector
+		const target = event.target as typeof event.target & {
+			username: { value: string },
+			password: { value: string },
+		}
+
+		signIn("credentials", {
+			redirect: false,
+			username: target.username.value,
+			password: target.password.value,
+		})
+	}
 
 	return (
 		<>
@@ -29,7 +43,7 @@ export default function Login() {
 				</div>
 
 				<div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-					<form className="space-y-6" action="#" method="POST">
+					<form className="space-y-6" onSubmit={handleLogin}>
 						<div>
 							<label htmlFor="username" className="block text-sm font-medium leading-6 text-gray-900">
 								Username / Email address
