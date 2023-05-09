@@ -12,7 +12,7 @@ export default function Layout({ children }: { children: ReactNode }) {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<div className="bg-white">
+			<div className="bg-white min-h-screen relative isolate">
 				<NavBar />
 				<div className="relative isolate pt-14">
 					{children}
