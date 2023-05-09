@@ -6,6 +6,7 @@ import CredentialsProvider from "next-auth/providers/credentials"
 import GoogleProvider from "next-auth/providers/google"
 import GithubProvider from "next-auth/providers/github"
 import DiscordProvider from "next-auth/providers/discord"
+import axios from "@/lib/axios"
 // import TwitterProvider from "next-auth/providers/twitter"
 // import AppleProvider from "next-auth/providers/apple"
 
@@ -44,15 +45,14 @@ export const authOptions: NextAuthOptions = {
 				// e.g. return { id: 1, name: 'J Smith', email: 'jsmith@example.com' }
 				// You can also use the `req` object to obtain additional parameters
 				// (i.e., the request IP address)
-				const res = await fetch("/your/endpoint", {
-					method: 'POST',
-					body: JSON.stringify(credentials),
-					headers: { "Content-Type": "application/json" }
+				const res = await axios.post("/api/auth", {
+					headers: { "Content-Type": "application/json" },
+					body: credentials,
 				})
-				const user = await res.json()
+				const user = await res.data
 
 				// If no error and we have user data, return it
-				if (res.ok && user) {
+				if (res.status === 200 && user) {
 					return user
 				}
 				// Return null if user data could not be retrieved
