@@ -44,7 +44,9 @@ export default function Fundraise() {
 					</div>
 				</div>
 			</div>
-			<Sponsors />
+			<div className="pb-16 lg:pb-20">
+				<Sponsors />
+			</div>
 			<Newsletter />
 			<RightBlob />
 		</>
