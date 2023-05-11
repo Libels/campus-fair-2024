@@ -14,7 +14,7 @@ import axios from "@/lib/axios"
 // https://next-auth.js.org/configuration/options
 export const authOptions: NextAuthOptions = {
 	// https://next-auth.js.org/configuration/providers/oauth
-	adapter: LaravelAdapter(),
+	// adapter: LaravelAdapter(),
 	providers: [
 		/* 
 		// Temporarily removing the Apple provider from the demo site as the
@@ -89,6 +89,25 @@ export const authOptions: NextAuthOptions = {
 			// token.userRole = "admin"
 			return token
 		},
+		async signIn({ user, account, profile, email, credentials }) {
+			return true
+			// return axios.post('/auth/x', {
+			// 	user: user,
+			// 	account: account,
+			// 	profile: profile,
+			// 	email: email,
+			// 	credentials: credentials,
+			// })
+			// const isAllowedToSignIn = true
+			// if (isAllowedToSignIn) {
+			// 	return true
+			// } else {
+			// 	// Return false to display a default error message
+			// 	return false
+			// 	// Or you can return a URL to redirect to:
+			// 	// return '/unauthorized'
+			// }
+		}
 	},
 }
 
