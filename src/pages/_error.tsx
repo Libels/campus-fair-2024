@@ -2,14 +2,14 @@ import Link from "next/link"
 import Image from 'next/image'
 import CommunityPhoto from '@/assets/about/community-photo.webp'
 
-export default function NotFound() {
+export default function ErrorPage() {
 	return (
 		<>
 			<main className="flex lg:flex-row flex-col-reverse min-h-full w-full items-center bg-white px-8 py-24 sm:py-32 lg:px-16">
 				<div className="lg:w-1/2">
-					<p className="text-base font-semibold text-fuchsia-600">404</p>
-					<h1 className="mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">Page not found</h1>
-					<p className="mt-6 text-base leading-7 text-gray-600">Sorry, we couldn&#39;t find the page you&#39;re looking for.</p>
+					<p className="text-base font-semibold text-fuchsia-600">???</p>
+					<h1 className="mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">Something went wrong</h1>
+					<p className="mt-6 text-base leading-7 text-gray-600">Sorry, we couldn&#39;t process your request.</p>
 					<div className="mt-10">
 						<Link
 							href="/"
