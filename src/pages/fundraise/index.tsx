@@ -5,6 +5,7 @@ import LeftBlob from '@/components/global/decorations/LeftBlob'
 import RightBlob from '@/components/global/decorations/RightBlob'
 import Newsletter from '@/components/global/card/Newsletter'
 import Sponsors from '@/components/fundraise/Sponsors'
+import Prospect from '@/components/fundraise/Prospect'
 
 export default function Fundraise() {
 	return (
@@ -43,6 +44,9 @@ export default function Fundraise() {
 						</Link>
 					</div>
 				</div>
+			</div>
+			<div className="pt-16 lg:pt-20">
+				<Prospect />
 			</div>
 			<div className="pb-16 lg:pb-20">
 				<Sponsors />
