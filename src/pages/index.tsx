@@ -33,7 +33,7 @@ export default function Home() {
 						>
 							Get started
 						</Link>
-						<Link href="#" className="text-sm font-semibold leading-6 text-gray-900">
+						<Link href="/about" className="text-sm font-semibold leading-6 text-gray-900">
 							Pelajari lebih lanjut <span aria-hidden="true">→</span>
 						</Link>
 					</div>
