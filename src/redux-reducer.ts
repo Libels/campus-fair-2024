@@ -8,9 +8,6 @@ export interface ReduxTypes {
 		avatar: string,
 		isVerified: boolean,
 		newsletter: boolean,
-	},
-	auth: {
-		jwt: string
 	}
 }
 
@@ -24,9 +21,6 @@ const reduxReducer = createSlice({
 			avatar: '',
 			isVerified: false,
 			newsletter: false,
-		},
-		auth: {
-			jwt: ''
 		}
 	},
 	reducers: {

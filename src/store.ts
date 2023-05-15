@@ -1,5 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { persistStore, persistReducer } from 'redux-persist'
+import {
+	persistStore, persistReducer,
+	FLUSH,
+	REHYDRATE,
+	PAUSE,
+	PERSIST,
+	PURGE,
+	REGISTER,
+} from 'redux-persist'
 import storageSession from 'redux-persist/lib/storage/session'
 
 import reduxReducer from "@/redux-reducer"
@@ -7,14 +15,20 @@ import reduxReducer from "@/redux-reducer"
 const persistConfig = {
 	key: 'primary',
 	storage: storageSession,
-	version: 2
+	version: 3
 }
 
 const persistedReducer = persistReducer(persistConfig, reduxReducer)
 
 export function makeStore() {
 	return configureStore({
-		reducer: persistedReducer
+		reducer: persistedReducer,
+		middleware: (getDefaultMiddleware) =>
+			getDefaultMiddleware({
+				serializableCheck: {
+					ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+				},
+			}),
 	})
 }
 
