@@ -6,8 +6,6 @@ import RightBlob from '@/components/global/decorations/RightBlob'
 import Newsletter from '@/components/global/card/Newsletter'
 
 import { FormEvent, useState } from 'react'
-import { ChevronDownIcon } from '@heroicons/react/20/solid'
-import { Switch } from '@headlessui/react'
 import { SuccessModal, WarningModal } from '@/components/global/Modal'
 
 function classNames(...classes: string[]) {
@@ -75,7 +73,7 @@ export default function Contact() {
 				Pesan anda telah dikirimkan, tunggu balasan dari kami, kami mungkin perlu waktu sedikit lebih lama karena keterbatasan tim.
 			</SuccessModal>
 
-			<WarningModal show={isErrorOpen} triggerModal={setIsDialogOpen} title="Sepertinya ada yang salah">
+			<WarningModal show={isErrorOpen} triggerModal={setIsErrorOpen} title="Sepertinya ada yang salah">
 				Terjadi kendala yang tidak dapat dihindari, cobalah beberapa saat lagi.
 			</WarningModal>
 
