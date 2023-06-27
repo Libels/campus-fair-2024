@@ -7,17 +7,17 @@ import { useDispatch, useSelector } from 'react-redux'
 import { newsletterSubscribed, ReduxTypes } from '@/redux-reducer'
 
 export default function Newsletter() {
-	const [emailAddress, setEmailAddress] = useState('')
+	const [emailAddress, setEmailAddress] = useState<string>('')
 
 	const subscribed: boolean = useSelector((state: ReduxTypes) => state.userSession.newsletter)
 	const dispatch = useDispatch()
 
 	const addressUpdate = async (event: React.ChangeEvent<HTMLInputElement>) => setEmailAddress(event.currentTarget.value)
 
-	const [isErrorOpen, setIsErrorOpen] = useState(false)
-	const [isDialogOpen, setIsDialogOpen] = useState(false)
+	const [isErrorOpen, setIsErrorOpen] = useState<boolean>(false)
+	const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false)
 
-	const [isSubmitted, setIsSubmitted] = useState(false)
+	const [isSubmitted, setIsSubmitted] = useState<boolean>(false)
 
 	const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault()
@@ -63,7 +63,7 @@ export default function Newsletter() {
 					Email anda telah terdaftar pada sistem, kami akan mengirimkan informasi terbaru kepada anda.
 				</SuccessModal>
 
-				<WarningModal show={isErrorOpen} triggerModal={setIsDialogOpen} title="Sepertinya ada yang salah">
+				<WarningModal show={isErrorOpen} triggerModal={setIsErrorOpen} title="Sepertinya ada yang salah">
 					Terjadi kendala yang tidak dapat dihindari, cobalah beberapa saat lagi.
 				</WarningModal>
 
