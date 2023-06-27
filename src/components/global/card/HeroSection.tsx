@@ -2,7 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 const links = [
-	{ name: 'Volunteer program', href: '#' },
+	{ name: 'Volunteer program', href: '/volunteer/register' },
 	{ name: 'Sponsorship', href: '/fundraise/sponsor' },
 	{ name: 'Fundraising', href: '/fundraise/donate' },
 	{ name: 'Meet our leadership', href: '/about' },
