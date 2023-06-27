@@ -6,7 +6,7 @@ import type {
 	VerificationToken,
 } from "next-auth/adapters"
 
-export async function fetchUser<T>(): Promise<T | null> {
+export async function fetchUser<T>(): Promise<T> {
 	return new Promise((resolve, reject) => {
 
 	})
@@ -30,13 +30,15 @@ export function LaravelAdapter(options = {}): Adapter {
 			return await fetchUser()
 		},
 		async deleteUser(userId) {
-			return await fetchUser()
+			return null
+			// return await fetchUser()
 		},
 		async linkAccount(account) {
-			return await fetchUser()
+			return null
+			// return await fetchUser()
 		},
 		async unlinkAccount({ providerAccountId, provider }) {
-			return await fetchUser()
+			// return await fetchUser()
 		},
 		async createSession({ sessionToken, userId, expires }) {
 			return await fetchUser()
@@ -48,7 +50,8 @@ export function LaravelAdapter(options = {}): Adapter {
 			return await fetchUser()
 		},
 		async deleteSession(sessionToken) {
-			return await fetchUser()
+			return null
+			// return await fetchUser()
 		},
 		async createVerificationToken({ identifier, expires, token }) {
 			return await fetchUser()
