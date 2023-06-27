@@ -118,30 +118,55 @@ export default function VolunteerRegister() {
 							</div>
 						</div>
 						<div>
-							<label htmlFor="organizationTitle" className="block text-sm font-semibold leading-6 text-gray-900">
+							<label htmlFor="schoolMajor" className="block text-sm font-semibold leading-6 text-gray-900">
+								Jurusan di Sekolah <span className="text-red-500 text-sm">*</span>
+							</label>
+							<div className="mt-2.5">
+								<input
+									required
+									type="text"
+									id="schoolMajor"
+									className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-fuchsia-600 sm:text-sm sm:leading-6"
+								/>
+							</div>
+						</div>
+						<div>
+							<label htmlFor="schoolGraduation" className="block text-sm font-semibold leading-6 text-gray-900">
+								Tahun Kelulusan Sekolah <span className="text-red-500 text-sm">*</span>
+							</label>
+							<div className="mt-2.5">
+								<input
+									required
+									type="text"
+									id="schoolGraduation"
+									className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-fuchsia-600 sm:text-sm sm:leading-6"
+								/>
+							</div>
+						</div>
+						<div>
+							<label htmlFor="faculty" className="block text-sm font-semibold leading-6 text-gray-900">
 								Fakultas <span className="text-red-500 text-sm">*</span>
 							</label>
 							<div className="mt-2.5">
 								<input
 									required
 									type="text"
-									name="organizationTitle"
-									id="organizationTitle"
-									autoComplete="organization-title"
+									name="faculty"
+									id="faculty"
 									className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-fuchsia-600 sm:text-sm sm:leading-6"
 								/>
 							</div>
 						</div>
 						<div>
-							<label htmlFor="organizationTitle" className="block text-sm font-semibold leading-6 text-gray-900">
+							<label htmlFor="studyField" className="block text-sm font-semibold leading-6 text-gray-900">
 								Program Studi <span className="text-red-500 text-sm">*</span>
 							</label>
 							<div className="mt-2.5">
 								<input
 									required
 									type="text"
-									name="organizationTitle"
-									id="organizationTitle"
+									name="studyField"
+									id="studyField"
 									autoComplete="organization-title"
 									className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-fuchsia-600 sm:text-sm sm:leading-6"
 								/>
@@ -149,7 +174,7 @@ export default function VolunteerRegister() {
 						</div>
 						<div className="sm:col-span-2">
 							<label htmlFor="company" className="block text-sm font-semibold leading-6 text-gray-900">
-								Perusahaan / Lembaga / Nama Usaha <span className="text-red-500 text-sm">*</span>
+								Nama Institusi <span className="text-red-500 text-sm">*</span>
 							</label>
 							<div className="mt-2.5">
 								<input
@@ -207,10 +232,10 @@ export default function VolunteerRegister() {
 								/>
 							</div>
 						</div>
-						<span className="text-sm leading-6 text-gray-600  sm:col-span-2">
+						<span className="text-sm leading-6 text-gray-600 sm:col-span-2">
 							Dengan mengirimkan pesan, artinya anda setuju terhadap{' '}
-							<Link legacyBehavior href="/privacy" className="font-semibold text-fuchsia-600">
-								<a target="_blank">privacy&nbsp;policy</a>
+							<Link legacyBehavior href="/privacy">
+								<a target="_blank" className="font-semibold text-fuchsia-600 hover:text-fuchsia-700">privacy&nbsp;policy</a>
 							</Link>.
 						</span>
 					</div>
