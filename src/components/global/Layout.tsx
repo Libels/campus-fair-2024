@@ -2,6 +2,7 @@ import Head from 'next/head'
 import NavBar from '@/components/global/NavBar'
 import Footer from '@/components/global/Footer'
 import { ReactNode } from 'react'
+import LoadingOverlay from '@/components/global/decorations/LoadingOverlay'
 
 export default function Layout({ children }: { children: ReactNode }) {
 	return (
@@ -14,6 +15,7 @@ export default function Layout({ children }: { children: ReactNode }) {
 			</Head>
 			<div className="bg-white min-h-screen relative isolate">
 				<NavBar />
+				<LoadingOverlay />
 				<div className="relative isolate pt-14">
 					{children}
 				</div>

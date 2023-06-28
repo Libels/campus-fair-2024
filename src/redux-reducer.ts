@@ -8,7 +8,8 @@ export interface ReduxTypes {
 		avatar: string,
 		isVerified: boolean,
 		newsletter: boolean,
-	}
+	},
+	pageLoading: boolean
 }
 
 const reduxReducer = createSlice({
@@ -21,9 +22,13 @@ const reduxReducer = createSlice({
 			avatar: '',
 			isVerified: false,
 			newsletter: false,
-		}
+		},
+		pageLoading: false
 	},
 	reducers: {
+		toggleLoading(state, action) {
+			state.pageLoading = action.payload
+		},
 		newsletterSubscribed(state) {
 			state.userSession.newsletter = true
 		},
@@ -38,6 +43,7 @@ const reduxReducer = createSlice({
 })
 
 export const {
+	toggleLoading,
 	newsletterSubscribed,
 	login,
 } = reduxReducer.actions
