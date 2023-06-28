@@ -19,6 +19,8 @@ export default function Newsletter() {
 
 	const [isSubmitted, setIsSubmitted] = useState<boolean>(false)
 
+	const [errorMessage, setErrorMessage] = useState<string>('Terjadi kendala yang tidak dapat dihindari, cobalah beberapa saat lagi.')
+
 	const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault()
 
@@ -40,12 +42,11 @@ export default function Newsletter() {
 		// Get the response data from server as JSON.
 		const status = await response.status
 
-		if (status === 200) {
-			return setIsDialogOpen(true)
-			// dispatch(newsletterSubscribed())
-		} else {
-			return setIsErrorOpen(true)
-		}
+		const body = await response.json()
+
+		if (status === 400) setErrorMessage(body.message)
+
+		return (status === 200) ? setIsDialogOpen(true) : setIsErrorOpen(true)
 	}
 
 	useEffect(() => {
@@ -64,7 +65,7 @@ export default function Newsletter() {
 				</SuccessModal>
 
 				<WarningModal show={isErrorOpen} triggerModal={setIsErrorOpen} title="Sepertinya ada yang salah">
-					Terjadi kendala yang tidak dapat dihindari, cobalah beberapa saat lagi.
+					{errorMessage}
 				</WarningModal>
 
 				<div className="mx-auto max-w-7xl px-6 lg:px-8">

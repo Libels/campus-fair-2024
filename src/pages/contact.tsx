@@ -13,9 +13,11 @@ function classNames(...classes: string[]) {
 }
 
 export default function Contact() {
-	const [agreed, setAgreed] = useState(false)
-	const [isErrorOpen, setIsErrorOpen] = useState(false)
-	const [isDialogOpen, setIsDialogOpen] = useState(false)
+	const [agreed, setAgreed] = useState<boolean>(false)
+	const [isErrorOpen, setIsErrorOpen] = useState<boolean>(false)
+	const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false)
+
+	const [errorMessage, setErrorMessage] = useState<string>('Terjadi kendala yang tidak dapat dihindari, cobalah beberapa saat lagi.')
 
 	const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
 		event.preventDefault()
@@ -53,12 +55,11 @@ export default function Contact() {
 
 		// Get the response data from server as JSON.
 		const status = await response.status
+		const body = await response.json()
 
-		if (status === 200) {
-			return setIsDialogOpen(true)
-		} else {
-			return setIsErrorOpen(true)
-		}
+		if (status === 400) setErrorMessage(body.message)
+
+		return (status === 200) ? setIsDialogOpen(true) : setIsErrorOpen(true)
 	}
 
 	return (
@@ -74,7 +75,7 @@ export default function Contact() {
 			</SuccessModal>
 
 			<WarningModal show={isErrorOpen} triggerModal={setIsErrorOpen} title="Sepertinya ada yang salah">
-				Terjadi kendala yang tidak dapat dihindari, cobalah beberapa saat lagi.
+				{errorMessage}
 			</WarningModal>
 
 			<div className="isolate px-6 py-24 sm:py-32 lg:px-8">
