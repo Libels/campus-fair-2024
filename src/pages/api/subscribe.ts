@@ -26,7 +26,13 @@ export default function handler(
 	axios.post(endpoint, {
 		email: body.email
 	}).then(response => {
-		res.status(response.status).json({ message: response.data })
+		const success = response.data.success
+
+		res.status(
+			success ? response.status : 400
+		).json({
+			message: success ? response.data : response.data.message
+		})
 	}).catch(error => {
 		res.status(500).json({ message: 'something went wrong' })
 		console.log(error)
