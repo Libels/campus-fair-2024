@@ -1,10 +1,12 @@
 import { CalendarDaysIcon, HandRaisedIcon } from '@heroicons/react/24/outline'
-import { useEffect, useState } from 'react'
+import { ChangeEvent, useEffect, useState } from 'react'
 
 import { SuccessModal, WarningModal } from '@/components/global/Modal'
 
 import { useDispatch, useSelector } from 'react-redux'
 import { newsletterSubscribed, ReduxTypes } from '@/redux-reducer'
+
+import isEmail from 'validator/lib/isEmail'
 
 export default function Newsletter() {
 	const [emailAddress, setEmailAddress] = useState<string>('')
@@ -49,6 +51,13 @@ export default function Newsletter() {
 		return (status === 200) ? setIsDialogOpen(true) : setIsErrorOpen(true)
 	}
 
+	const validateEmail = (e: ChangeEvent<HTMLInputElement>) => {
+		if (!isEmail(e.target.value)) {
+			setIsErrorOpen(true)
+			setErrorMessage("Alamat email tidak valid")
+		}
+	}
+
 	useEffect(() => {
 		if (isSubmitted && !isDialogOpen) {
 			dispatch(newsletterSubscribed())
@@ -87,6 +96,7 @@ export default function Newsletter() {
 										value={emailAddress}
 										onChange={addressUpdate}
 										autoComplete="email"
+										onBlur={validateEmail}
 										required
 										className="min-w-0 flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-fuchsia-500 sm:text-sm sm:leading-6"
 										placeholder="Enter your email"

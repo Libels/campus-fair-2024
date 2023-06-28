@@ -4,8 +4,9 @@ import Link from 'next/link'
 import LeftBlob from '@/components/global/decorations/LeftBlob'
 import RightBlob from '@/components/global/decorations/RightBlob'
 import Newsletter from '@/components/global/card/Newsletter'
+import isEmail from 'validator/lib/isEmail'
 
-import { FormEvent, useState } from 'react'
+import { ChangeEvent, FormEvent, useState } from 'react'
 import { SuccessModal, WarningModal } from '@/components/global/Modal'
 
 function classNames(...classes: string[]) {
@@ -60,6 +61,13 @@ export default function Contact() {
 		if (status === 400) setErrorMessage(body.message)
 
 		return (status === 200) ? setIsDialogOpen(true) : setIsErrorOpen(true)
+	}
+
+	const validateEmail = (e: ChangeEvent<HTMLInputElement>) => {
+		if (!isEmail(e.target.value)) {
+			setIsErrorOpen(true)
+			setErrorMessage("Alamat email tidak valid")
+		}
 	}
 
 	return (
@@ -139,6 +147,7 @@ export default function Contact() {
 									name="email"
 									id="email"
 									autoComplete="email"
+									onBlur={validateEmail}
 									className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-fuchsia-600 sm:text-sm sm:leading-6"
 								/>
 							</div>
