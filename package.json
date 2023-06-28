@@ -25,7 +25,8 @@
     "redux-devtools-extension": "^2.13.9",
     "redux-persist": "^6.0.0",
     "swr": "^2.1.5",
-    "typescript": "5.0.2"
+    "typescript": "5.0.2",
+    "validator": "^13.9.0"
   },
   "devDependencies": {
     "@headlessui/react": "^1.7.13",
