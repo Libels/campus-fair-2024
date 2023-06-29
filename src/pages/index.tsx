@@ -13,7 +13,7 @@ export default function Home() {
 				<div className="hidden sm:mb-8 sm:flex sm:justify-center">
 					<div className="relative rounded-full py-1 px-3 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
 						Shout out! untuk seluruh alumni yang aktif di Universitas.{' '}
-						<Link href="/volunteer/register" className="font-semibold text-fuchsia-600">
+						<Link href="/volunteer/register" className="font-semibold text-teal-600">
 							<span className="absolute inset-0" aria-hidden="true" />
 							Lebih lanjut <span aria-hidden="true">&rarr;</span>
 						</Link>
@@ -29,7 +29,7 @@ export default function Home() {
 					<div className="mt-10 flex items-center justify-center gap-x-6">
 						<Link
 							href="#"
-							className="rounded-md bg-fuchsia-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-fuchsia-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fuchsia-600"
+							className="rounded-md bg-teal-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-teal-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
 						>
 							Get started
 						</Link>

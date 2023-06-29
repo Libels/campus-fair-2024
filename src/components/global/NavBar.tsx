@@ -29,7 +29,7 @@ export default function NavBar() {
 							<span className="sr-only">Libels Campus Fair</span>
 							<img
 								className="h-8 w-auto"
-								src="https://tailwindui.com/img/logos/mark.svg?color=fuchsia&shade=600"
+								src="https://tailwindui.com/img/logos/mark.svg?color=teal&shade=600"
 								alt=""
 							/>
 						</Link>
@@ -68,7 +68,7 @@ export default function NavBar() {
 								<span className="sr-only">Libels Campus Fair</span>
 								<img
 									className="h-8 w-auto"
-									src="https://tailwindui.com/img/logos/mark.svg?color=fuchsia&shade=600"
+									src="https://tailwindui.com/img/logos/mark.svg?color=teal&shade=600"
 									alt=""
 								/>
 							</Link>

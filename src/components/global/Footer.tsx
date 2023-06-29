@@ -14,7 +14,7 @@ export default function Footer() {
 					<span>
 						&copy; 2023 Libels Campus Fair &times;{' '}
 						<Link legacyBehavior href="https://sabako.id/">
-							<a target="_blank" className="text-fuchsia-600 hover:text-fuchsia-700">SABAKO</a>
+							<a target="_blank" className="text-teal-600 hover:text-teal-700">SABAKO</a>
 						</Link>
 					</span>
 					<div className="hidden lg:flex lg:gap-x-12">

@@ -18,7 +18,7 @@ export default function Privacy() {
 					<div className="lg:mx-auto lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
 						<div className="lg:pr-4">
 							<div className="lg:max-w-xl leading-7 text-gray-700">
-								<p className="text-base font-semibold leading-7 text-fuchsia-600">Privacy Policy</p>
+								<p className="text-base font-semibold leading-7 text-teal-600">Privacy Policy</p>
 								<h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Kamu ada di komunitas yang baik</h1>
 								<span className="mt-6 text-sm leading-8 font-semibold text-gray-900">Revisi Terakhir: 21 April 2023</span>
 								<p className="mt-6 text-base leading-8">
@@ -73,7 +73,7 @@ export default function Privacy() {
 									<li>NPWP</li>
 								</ul>
 								<p className="mt-6">
-									<strong className="font-semibold text-gray-900">Data pembayaran.</strong> Kami mungkin mengambil data yang diperlukan untuk memproses pembayaran jika anda melakukan transaksi ataupun donasi, seperti nomor instrumen pembayaran beserta kode keamanan terkait. Semua data pembayaran disimpan oleh Xendit. Anda mungkin ingin mempelajari Privacy Policy mereka di link berikut: <Link legacyBehavior className="text-underline text-fuchsia-500" href="https://www.xendit.co/id/privacy-policy/"><a target="_blank">https://www.xendit.co/id/privacy-policy/</a></Link>.
+									<strong className="font-semibold text-gray-900">Data pembayaran.</strong> Kami mungkin mengambil data yang diperlukan untuk memproses pembayaran jika anda melakukan transaksi ataupun donasi, seperti nomor instrumen pembayaran beserta kode keamanan terkait. Semua data pembayaran disimpan oleh Xendit. Anda mungkin ingin mempelajari Privacy Policy mereka di link berikut: <Link legacyBehavior className="text-underline text-teal-500" href="https://www.xendit.co/id/privacy-policy/"><a target="_blank">https://www.xendit.co/id/privacy-policy/</a></Link>.
 								</p>
 								<p className="mt-6">
 									<strong className="font-semibold text-gray-900">Data Login Social Media.</strong> Kami mungkin memberikan opsi kemudahan di Platform ini untuk registrasi atau mentautkan menggunakan akun social media yang sudah ada, seperti akun Twitter, Google, GitHub, LinkedIn. Jika anda memilih untuk registrasi dengan cara ini, kami sudah menjelaskannya di bagian terkait.
@@ -151,10 +151,10 @@ export default function Privacy() {
 								</p>
 								<h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">8. APA HAK PRIVASI ANDA?</h2>
 								<p className="mt-6">
-									Jika anda berada di wilayah Eropa ataupun UK dan yakin jika kami melanggar kewenangan dalam memproses informasi pribadi anda, anda memiliki hak untuk melapor kepada <Link className="text-underline text-fuchsia-500" href="https://ec.europa.eu/justice/data-protection/bodies/authorities/index_en.htm">Otoritas pengamanan data anggota setempat</Link> atau <Link className="text-underline text-fuchsia-500" href="https://ico.org.uk/make-a-complaint/data-protection-complaints/data-protection-complaints/">Otoritas pengamanan data UK</Link>.
+									Jika anda berada di wilayah Eropa ataupun UK dan yakin jika kami melanggar kewenangan dalam memproses informasi pribadi anda, anda memiliki hak untuk melapor kepada <Link className="text-underline text-teal-500" href="https://ec.europa.eu/justice/data-protection/bodies/authorities/index_en.htm">Otoritas pengamanan data anggota setempat</Link> atau <Link className="text-underline text-teal-500" href="https://ico.org.uk/make-a-complaint/data-protection-complaints/data-protection-complaints/">Otoritas pengamanan data UK</Link>.
 								</p>
 								<p className="mt-6">
-									Jika anda berada di Switzerland, anda mungkin dapat menghubungi <Link className="text-underline text-fuchsia-500" href="https://www.edoeb.admin.ch/edoeb/en/home.html">Federasi pengamanan data dan komisi informasi</Link>
+									Jika anda berada di Switzerland, anda mungkin dapat menghubungi <Link className="text-underline text-teal-500" href="https://www.edoeb.admin.ch/edoeb/en/home.html">Federasi pengamanan data dan komisi informasi</Link>
 								</p>
 								<p className="mt-6">
 									<strong className="font-semibold text-gray-900">Membatalkan Izin:</strong> Kami bergantung terhadap izin anda untuk memproses data pribadi, yang mungkin diterapkan tergantung dengan hukum yang berlaku, anda dapat menarik izin anda kapan saja dengan menghubungi kami.
@@ -185,11 +185,11 @@ export default function Privacy() {
 								</p>
 								<h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">11. KEMANA ANDA DAPAT MENGHUBUNGI KAMI TERKAIT PEMBERITAHUAN INI?</h2>
 								<p className="mt-6">
-									Jika anda memiliki beberapa pertanyaan terkait pemberitahuan ini, anda dapat menghubungi kami melalui Instagram kami <Link className="text-underline text-fuchsia-500" href="https://www.instagram.com/lcf_jkt/">@lcf_jkt</Link>.
+									Jika anda memiliki beberapa pertanyaan terkait pemberitahuan ini, anda dapat menghubungi kami melalui Instagram kami <Link className="text-underline text-teal-500" href="https://www.instagram.com/lcf_jkt/">@lcf_jkt</Link>.
 								</p>
 								<h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">12. BAGAIMANA ANDA MENINJAU, UPDATE, ATAU MENGHAPUS DATA YANG KAMI DAPATKAN DARI ANDA?</h2>
 								<p className="mt-6">
-									Tergantung dari hukum yang berlaku di negara anda, anda memiliki hak untuk mengakses informasi pribadi yang kami dapatkan dari anda, merubah informasi tersebut, atau menghapusnya. Untuk itu anda dapat menghubungi kami melalui Instagram kami <Link className="text-underline text-fuchsia-500" href="https://www.instagram.com/lcf_jkt/">@lcf_jkt</Link>.
+									Tergantung dari hukum yang berlaku di negara anda, anda memiliki hak untuk mengakses informasi pribadi yang kami dapatkan dari anda, merubah informasi tersebut, atau menghapusnya. Untuk itu anda dapat menghubungi kami melalui Instagram kami <Link className="text-underline text-teal-500" href="https://www.instagram.com/lcf_jkt/">@lcf_jkt</Link>.
 								</p>
 							</div>
 						</div>

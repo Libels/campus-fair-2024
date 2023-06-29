@@ -113,7 +113,7 @@ export default function FundraiseSponsor() {
 									name="fullName"
 									id="fullName"
 									autoComplete="name"
-									className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-fuchsia-600 sm:text-sm sm:leading-6"
+									className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-teal-600 sm:text-sm sm:leading-6"
 								/>
 							</div>
 						</div>
@@ -128,7 +128,7 @@ export default function FundraiseSponsor() {
 									name="organizationTitle"
 									id="organizationTitle"
 									autoComplete="organization-title"
-									className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-fuchsia-600 sm:text-sm sm:leading-6"
+									className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-teal-600 sm:text-sm sm:leading-6"
 								/>
 							</div>
 						</div>
@@ -143,7 +143,7 @@ export default function FundraiseSponsor() {
 									name="company"
 									id="company"
 									autoComplete="organization"
-									className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-fuchsia-600 sm:text-sm sm:leading-6"
+									className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-teal-600 sm:text-sm sm:leading-6"
 								/>
 							</div>
 						</div>
@@ -158,7 +158,7 @@ export default function FundraiseSponsor() {
 									name="email"
 									id="email"
 									autoComplete="email"
-									className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-fuchsia-600 sm:text-sm sm:leading-6"
+									className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-teal-600 sm:text-sm sm:leading-6"
 								/>
 							</div>
 						</div>
@@ -173,7 +173,7 @@ export default function FundraiseSponsor() {
 									name="phoneNumber"
 									id="phoneNumber"
 									autoComplete="tel"
-									className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-fuchsia-600 sm:text-sm sm:leading-6"
+									className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-teal-600 sm:text-sm sm:leading-6"
 								/>
 							</div>
 						</div>
@@ -187,14 +187,14 @@ export default function FundraiseSponsor() {
 									name="message"
 									id="message"
 									rows={4}
-									className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-fuchsia-600 sm:text-sm sm:leading-6"
+									className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-teal-600 sm:text-sm sm:leading-6"
 									defaultValue={''}
 								/>
 							</div>
 						</div>
 						<span className="text-sm leading-6 text-gray-600  sm:col-span-2">
 							Dengan mengirimkan pesan, artinya anda setuju terhadap{' '}
-							<Link legacyBehavior href="/privacy" className="font-semibold text-fuchsia-600">
+							<Link legacyBehavior href="/privacy" className="font-semibold text-teal-600">
 								<a target="_blank">privacy&nbsp;policy</a>
 							</Link>.
 						</span>
@@ -202,7 +202,7 @@ export default function FundraiseSponsor() {
 					<div className="mt-10">
 						<button
 							type="submit"
-							className="block w-full rounded-md bg-fuchsia-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-fuchsia-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fuchsia-600"
+							className="block w-full rounded-md bg-teal-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-teal-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
 						>
 							Mari diskusi lebih lanjut
 						</button>

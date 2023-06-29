@@ -5,12 +5,14 @@ import Link from 'next/link'
 import { ReduxTypes } from '@/redux-reducer'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { signIn } from "next-auth/react"
+import { signIn, useSession } from "next-auth/react"
 
 export default function Login() {
 
 	const subscribed: boolean = useSelector((state: ReduxTypes) => state.userSession.newsletter)
 	const dispatch = useDispatch()
+
+	const { data: session, status } = useSession()
 
 	const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault()
@@ -40,6 +42,11 @@ export default function Login() {
 					<h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
 						Sign in to your account
 					</h2>
+					<h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
+						{
+							(status === "authenticated") ? JSON.stringify(session.user) : 'not signed'
+						}
+					</h2>
 				</div>
 
 				<div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
@@ -55,7 +62,7 @@ export default function Login() {
 									type="text"
 									autoComplete="username"
 									required
-									className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-fuchsia-600 sm:text-sm sm:leading-6"
+									className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-teal-600 sm:text-sm sm:leading-6"
 								/>
 							</div>
 						</div>
@@ -66,7 +73,7 @@ export default function Login() {
 									Password
 								</label>
 								<div className="text-sm">
-									<Link href="/account/forgot-password" className="font-semibold text-fuchsia-600 hover:text-fuchsia-500">
+									<Link href="/account/forgot-password" className="font-semibold text-teal-600 hover:text-teal-500">
 										Forgot password?
 									</Link>
 								</div>
@@ -78,7 +85,7 @@ export default function Login() {
 									type="password"
 									autoComplete="current-password"
 									required
-									className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-fuchsia-600 sm:text-sm sm:leading-6"
+									className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-teal-600 sm:text-sm sm:leading-6"
 								/>
 							</div>
 						</div>
@@ -86,7 +93,7 @@ export default function Login() {
 						<div>
 							<button
 								type="submit"
-								className="primary-button w-full text-white bg-fuchsia-600 hover:bg-fuchsia-500 focus-visible:outline-fuchsia-600"
+								className="primary-button w-full text-white bg-teal-600 hover:bg-teal-500 focus-visible:outline-teal-600"
 							>
 								Sign in
 							</button>
@@ -111,7 +118,7 @@ export default function Login() {
 
 					<p className="mt-10 text-center text-sm text-gray-500">
 						Belum menjadi anggota?{' '}
-						<Link href="/account/register" className="font-semibold leading-6 text-fuchsia-600 hover:text-fuchsia-500">
+						<Link href="/account/register" className="font-semibold leading-6 text-teal-600 hover:text-teal-500">
 							Daftar Sekarang
 						</Link>
 					</p>

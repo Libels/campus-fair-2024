@@ -35,7 +35,7 @@ export default function Register() {
 									type="text"
 									autoComplete="username"
 									required
-									className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-fuchsia-600 sm:text-sm sm:leading-6"
+									className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-teal-600 sm:text-sm sm:leading-6"
 								/>
 							</div>
 						</div> */}
@@ -51,7 +51,7 @@ export default function Register() {
 									type="email"
 									autoComplete="email"
 									required
-									className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-fuchsia-600 sm:text-sm sm:leading-6"
+									className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-teal-600 sm:text-sm sm:leading-6"
 								/>
 							</div>
 						</div>
@@ -67,7 +67,7 @@ export default function Register() {
 									type="tel"
 									autoComplete="phone"
 									required
-									className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-fuchsia-600 sm:text-sm sm:leading-6"
+									className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-teal-600 sm:text-sm sm:leading-6"
 								/>
 							</div>
 						</div>
@@ -85,7 +85,7 @@ export default function Register() {
 									type="password"
 									autoComplete="current-password"
 									required
-									className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-fuchsia-600 sm:text-sm sm:leading-6"
+									className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-teal-600 sm:text-sm sm:leading-6"
 								/>
 							</div>
 						</div>
@@ -93,7 +93,7 @@ export default function Register() {
 						<div>
 							<button
 								type="submit"
-								className="primary-button w-full bg-fuchsia-600 text-white hover:bg-fuchsia-500 focus-visible:outline-fuchsia-600"
+								className="primary-button w-full bg-teal-600 text-white hover:bg-teal-500 focus-visible:outline-teal-600"
 							>
 								Sign in
 							</button>
@@ -118,7 +118,7 @@ export default function Register() {
 
 					<p className="mt-10 text-center text-sm text-gray-500">
 						Sudah punya akun?{' '}
-						<Link href="/account/login" className="font-semibold leading-6 text-fuchsia-600 hover:text-fuchsia-500">
+						<Link href="/account/login" className="font-semibold leading-6 text-teal-600 hover:text-teal-500">
 							Masuk Sekarang
 						</Link>
 					</p>

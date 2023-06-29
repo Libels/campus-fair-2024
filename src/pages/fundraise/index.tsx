@@ -19,7 +19,7 @@ export default function Fundraise() {
 				<div className="hidden sm:mb-8 sm:flex sm:justify-center">
 					<div className="relative rounded-full py-1 px-3 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
 						Mencari peluang kerja sama?{' '}
-						<Link href="/fundraise/sponsor" className="font-semibold text-fuchsia-600">
+						<Link href="/fundraise/sponsor" className="font-semibold text-teal-600">
 							<span className="absolute inset-0" aria-hidden="true" />
 							Mari Diskusi <span aria-hidden="true">&rarr;</span>
 						</Link>
@@ -35,7 +35,7 @@ export default function Fundraise() {
 					<div className="mt-10 flex items-center justify-center gap-x-6">
 						<Link
 							href="/fundraise/donate"
-							className="rounded-md bg-fuchsia-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-fuchsia-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fuchsia-600"
+							className="rounded-md bg-teal-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-teal-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
 						>
 							Donasi Sekarang
 						</Link>
