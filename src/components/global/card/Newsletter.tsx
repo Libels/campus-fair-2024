@@ -4,9 +4,9 @@ import { ChangeEvent, useEffect, useState } from 'react'
 import { SuccessModal, WarningModal } from '@/components/global/Modal'
 
 import { useDispatch, useSelector } from 'react-redux'
-import { newsletterSubscribed, ReduxTypes } from '@/redux-reducer'
+import { newsletterSubscribed, ReduxTypes, toggleLoading } from '@/redux-reducer'
 
-import isEmail from 'validator/lib/isEmail'
+import { EmailInput } from '@/components/forms/Input'
 
 export default function Newsletter() {
 	const [emailAddress, setEmailAddress] = useState<string>('')
@@ -18,13 +18,17 @@ export default function Newsletter() {
 
 	const [isErrorOpen, setIsErrorOpen] = useState<boolean>(false)
 	const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false)
-
 	const [isSubmitted, setIsSubmitted] = useState<boolean>(false)
 
+	const [emailValidated, validateEmail] = useState<boolean>(false)
 	const [errorMessage, setErrorMessage] = useState<string>('Terjadi kendala yang tidak dapat dihindari, cobalah beberapa saat lagi.')
 
 	const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault()
+
+		if (!emailValidated) return event.currentTarget.email.setCustomValidity("Email not properly formatted")
+
+		dispatch(toggleLoading(true))
 
 		// API endpoint
 		const endpoint = '/api/subscribe'
@@ -38,7 +42,7 @@ export default function Newsletter() {
 			}),
 		}
 
-		// Send the form data to our forms API on Vercel and get a response.
+		// Send the form data to our forms API
 		const response = await fetch(endpoint, options)
 
 		// Get the response data from server as JSON.
@@ -46,16 +50,11 @@ export default function Newsletter() {
 
 		const body = await response.json()
 
-		if (status === 400) setErrorMessage(body.message)
+		dispatch(toggleLoading(false))
+
+		setErrorMessage(body.message)
 
 		return (status === 200) ? setIsDialogOpen(true) : setIsErrorOpen(true)
-	}
-
-	const validateEmail = (e: ChangeEvent<HTMLInputElement>) => {
-		if (!isEmail(e.target.value)) {
-			setIsErrorOpen(true)
-			setErrorMessage("Alamat email tidak valid")
-		}
 	}
 
 	useEffect(() => {
@@ -89,15 +88,15 @@ export default function Newsletter() {
 									<label htmlFor="email-address" className="sr-only">
 										Email address
 									</label>
-									<input
+									<EmailInput
+										required
 										id="email-address"
 										name="email"
 										type="email"
 										value={emailAddress}
 										onChange={addressUpdate}
 										autoComplete="email"
-										onBlur={validateEmail}
-										required
+										emailValidate={validateEmail}
 										className="min-w-0 flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-fuchsia-500 sm:text-sm sm:leading-6"
 										placeholder="Enter your email"
 									/>
