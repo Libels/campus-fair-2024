@@ -33,14 +33,14 @@ export default function handler(
 	}).then(response => {
 		const success = response.data.success
 
-		return res.status(
+		res.status(
 			success ? response.status : 400
 		).json({
 			message: success ? response.data : response.data.message
 		})
 	}).catch(error => {
 		console.log(error)
+		res.status(500).json({ message: 'Server Maintenance' })
 	})
 
-	res.status(500).json({ message: 'Server Maintenance' })
 }

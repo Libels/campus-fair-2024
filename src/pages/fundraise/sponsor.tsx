@@ -9,18 +9,28 @@ import { FormEvent, useState } from 'react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { Switch } from '@headlessui/react'
 import { SuccessModal, WarningModal } from '@/components/global/Modal'
+import { EmailInput } from '@/components/forms/Input'
+
+import { useDispatch } from 'react-redux'
+import { toggleLoading } from '@/redux-reducer'
 
 function classNames(...classes: string[]) {
 	return classes.filter(Boolean).join(' ')
 }
 
 export default function FundraiseSponsor() {
-	const [agreed, setAgreed] = useState(false)
+	const dispatch = useDispatch()
+
+	const [emailValidated, validateEmail] = useState<boolean>(false)
 	const [isErrorOpen, setIsErrorOpen] = useState(false)
 	const [isDialogOpen, setIsDialogOpen] = useState(false)
 
 	const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
 		event.preventDefault()
+
+		if (!emailValidated) return event.currentTarget.email.setCustomValidity("Email not properly formatted")
+
+		dispatch(toggleLoading(true))
 
 		// Initiate form input selector
 		const target = event.target as typeof event.target & {
@@ -54,6 +64,8 @@ export default function FundraiseSponsor() {
 
 		// Send the form data to our forms API on Vercel and get a response.
 		const response = await fetch(endpoint, options)
+
+		dispatch(toggleLoading(false))
 
 		// Get the response data from server as JSON.
 		const status = await response.status
@@ -152,13 +164,14 @@ export default function FundraiseSponsor() {
 								Email <span className="text-red-500 text-sm">*</span>
 							</label>
 							<div className="mt-2.5">
-								<input
+								<EmailInput
 									required
 									type="email"
 									name="email"
 									id="email"
 									autoComplete="email"
 									className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-teal-600 sm:text-sm sm:leading-6"
+									emailValidate={validateEmail}
 								/>
 							</div>
 						</div>
