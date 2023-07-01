@@ -47,7 +47,7 @@ export default function UniversityItem({ params }: { params: { slug: string } })
 
 	useEffect(() => {
 		(async () => {
-			const res = await fetch('/api/university')
+			const res = await fetch('/api/university/0')
 
 			if (!res.ok) {
 				throw new Error('Failed to fetch data')
@@ -94,7 +94,7 @@ export default function UniversityItem({ params }: { params: { slug: string } })
 						{university.contacts.map((contact) => (
 							<div key={contact.href} className="pt-2 text-sm grid grid-cols-2">
 								<span className="font-medium text-gray-900">
-									{contact.type}:
+									{contact.type}
 								</span>
 								<Link className="text-gray-500 hover:text-gray-700" href={contact.href}>
 									<span className="">{contact.text}</span>
