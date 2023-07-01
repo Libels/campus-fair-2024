@@ -89,7 +89,7 @@ export default function FundraiseSponsor() {
 				Pesan anda telah dikirimkan, tunggu balasan dari kami, kami mungkin perlu waktu sedikit lebih lama karena keterbatasan tim.
 			</SuccessModal>
 
-			<WarningModal show={isErrorOpen} triggerModal={setIsDialogOpen} title="Sepertinya ada yang salah">
+			<WarningModal show={isErrorOpen} triggerModal={setIsErrorOpen} title="Sepertinya ada yang salah">
 				Terjadi kendala yang tidak dapat dihindari, cobalah beberapa saat lagi.
 			</WarningModal>
 
