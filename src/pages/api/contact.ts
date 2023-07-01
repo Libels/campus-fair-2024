@@ -37,7 +37,8 @@ export default function handler(
 			message: success ? response.data : response.data.message
 		})
 	}).catch(error => {
-		res.status(500).json({ message: 'Server Maintenance' })
 		console.log(error)
 	})
+
+	res.status(500).json({ message: 'Server Maintenance' })
 }

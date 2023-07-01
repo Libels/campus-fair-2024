@@ -1,4 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import axios from '@/lib/axios'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 type Data = {
@@ -6,8 +7,8 @@ type Data = {
 }
 
 export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>
+	req: NextApiRequest,
+	res: NextApiResponse<Data>
 ) {
 	// Get data submitted in request's body.
 	const body = req.body
@@ -19,7 +20,27 @@ export default function handler(
 		return res.status(400).json({ message: 'body not complete' })
 	}
 
-	// Found the name.
-	// Sends a HTTP success code
-	res.status(200).json({ message: body })
+	// API endpoint
+	const endpoint = '/api/lead'
+
+	axios.post(endpoint, {
+		fullName: body.fullName,
+		email: body.email,
+		phoneNumber: body.phoneNumber,
+		role: body.organizationTitle,
+		company: body.company,
+		message: body.message
+	}).then(response => {
+		const success = response.data.success
+
+		res.status(
+			success ? response.status : 400
+		).json({
+			message: success ? response.data : response.data.message
+		})
+	}).catch(error => {
+		console.log(error)
+	})
+
+	res.status(500).json({ message: 'Server Maintenance' })
 }
