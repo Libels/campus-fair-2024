@@ -31,7 +31,7 @@ export default function handler(
 	}).then(response => {
 		const success = response.data.success
 
-		res.status(
+		return res.status(
 			success ? response.status : 400
 		).json({
 			message: success ? response.data : response.data.message
