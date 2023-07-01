@@ -190,8 +190,8 @@ export default function Contact() {
 						</div>
 						<span className="text-sm leading-6 text-gray-600  sm:col-span-2">
 							Dengan mengirimkan pesan, artinya anda setuju terhadap{' '}
-							<Link legacyBehavior href="/privacy" className="font-semibold text-teal-600">
-								<a target="_blank">privacy&nbsp;policy</a>
+							<Link legacyBehavior href="/privacy">
+								<a className="font-semibold text-teal-600" target="_blank">privacy&nbsp;policy</a>
 							</Link>.
 						</span>
 					</div>
