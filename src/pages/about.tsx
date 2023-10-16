@@ -7,39 +7,6 @@ import FeaturedSection from '@/components/about/FeaturedSection'
 import Teams from '@/components/about/Teams'
 import Newsletter from '@/components/global/card/Newsletter'
 
-const people = [
-	{
-		name: 'Ahmad Azhari',
-		role: 'President',
-		imageUrl:
-			'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-	},
-	{
-		name: 'Fray Dalton',
-		role: 'Vice President',
-		imageUrl:
-			'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-	},
-	{
-		name: 'Desi Kristianti',
-		role: 'Babu #1',
-		imageUrl:
-			'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-	},
-	{
-		name: 'Mutliqa Maimun',
-		role: 'Babu #2',
-		imageUrl:
-			'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-	},
-	{
-		name: 'Hanna Balqis',
-		role: 'Babu #3',
-		imageUrl:
-			'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-	},
-]
-
 export default function About() {
 	return (
 		<>
@@ -63,7 +30,7 @@ export default function About() {
 				</div>
 			</div>
 			<FeaturedSection />
-			<Teams people={people} />
+			<Teams />
 			<Newsletter />
 			<RightBlob />
 		</>
