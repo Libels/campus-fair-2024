@@ -61,7 +61,7 @@ export default function UniversityLanding() {
 											alt={'Logo ' + university.name}
 											width={300}
 											height={300}
-											className="h-full w-full object-cover object-center"
+											className="h-full w-full object-contain object-center"
 										/>
 									</div>
 									<h3 className="mt-6 text-sm text-gray-500">
