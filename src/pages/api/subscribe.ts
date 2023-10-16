@@ -21,17 +21,19 @@ export default function handler(
 	}
 
 	// API endpoint
-	const endpoint = '/api/subscribe'
+	// const endpoint = '/api/subscribe'
+	const endpoint = 'https://discord.com/api/webhooks/1163522620294180944/dVnUxEzk2LH_Izo5tF1g7tX85bS-KhaF038xcPAw6r872IxiByTa-Igfp-lsX0zhJ2yC?thread_id=1163525214999674961&wait=true'
 
 	axios.post(endpoint, {
-		email: body.email
+		content: `\`${body.email}\``
 	}).then(response => {
-		const success = response.data.success
+		const success = response.data.author.bot
+		// const success = response.data.success
 
 		res.status(
 			success ? response.status : 400
 		).json({
-			message: success ? response.data : response.data.message
+			message: success ? response.data : 'Something Wrong'
 		})
 	}).catch(error => {
 		console.log(error)
